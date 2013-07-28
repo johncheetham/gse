@@ -1,0 +1,131 @@
+gse 0.1.6
+John Cheetham May 2012
+
+Project Homepage : http://www.johncheetham.com/projects/gshogi/#gse
+email : developer@johncheetham.com
+
+
+Description
+-----------
+gse is short for GShogi Engine. It is a USI Shogi engine.
+It can be used with a USI GUI to play shogi.
+
+It is based on the engine from gShogi which itself is based on the
+engine from GNU shogi.
+
+This version of gse was written and tested on Fedora 14 64 bit.
+
+See the project homepage for more information.
+
+
+Requirements
+------------
+C.
+
+
+Compiling
+---------
+cd src
+make
+
+
+Testing
+-------
+Before using gse with a gui you should check it works from the command line.
+Check you can start it and it responds with usiok.
+
+cd src
+enter './gse.sh' to run it
+enter 'usi'
+it should respond with 'usiok'
+enter 'quit'
+
+You should also see the message '# gse Book used 5668(8000)' indicating
+that the engine is using the opening book.
+
+
+Windows
+-------
+On windows you can compile it under cygwin with the command 'make -f Makefile-cygwin'.
+
+
+Usage
+-----
+gse is a USI engine that should be used in conjunction with a USI GUI.
+You can use it on Linux with gShogi or on windows with Shogidokoro.
+
+Start the USI GUI and add gse as an engine by navigating to the gse/src/gse.sh
+script.
+
+gse will look for an opening book file called gse.bbk in the same 
+directory as itself and will use it if present. gse.bbk is created
+when compiling gse.
+
+Features
+--------
+gse was tested with gshogi 0.4. It supports the features in gshogi 0.4
+including handicap games and the various time controls.
+
+Time control/Level support
+--------------------------
+Examples of time controls that can be used with gse.
+Note that times on the go command are in milliseconds.
+
+byoyomi
+
+    e.g. 60 minutes game time plus 30 seconds byoyomi
+    This means the player can make as many or as few moves as they like
+    in the 30 minutes and after that they will have 30 seconds per move.
+
+    go btime 3600000 wtime 3600000 byoyomi 30000    
+
+    If you want a fixed time of 10 seconds per move:
+    go btime 0 wtime 0 byoyomi 10000
+
+    see http://en.wikipedia.org/wiki/Byoyomi
+
+classical
+
+    e.g. 40 moves in 5 minutes
+
+    go btime 300000 wtime 300000 movestogo 40
+
+Incremental
+
+    e.g. 30 minutes game time and 10 seconds bonus time per move
+    This means the basic time for the game is 30 minutes and after
+    each move a bonus of 10 seconds is added to the clock.
+
+    go btime 1800000 wtime 1800000 binc 10000 winc 10000
+
+Fixed Time Per Move
+
+    e.g. 20 seconds per move
+    go movetime 20000
+
+Fixed Search Depth
+
+    e.g. Terminate the search when a depth of 8 is reached.
+
+    go depth 8
+
+Infinite search
+
+    The search will go on indefinitely and will only terminate if
+    a stop command (move now) is sent from the gui.
+
+    go infinite
+
+Fixed No. of Nodes
+
+    The search will terminate after a fixed no. of nodes has been searched.
+
+    go nodes 10000000
+
+
+Acknowledgements
+----------------
+gse is based on the gShogi engine (http://www.johncheetham.com/projects/gshogi).
+gShogi is based on GNU shogi (http://directory.fsf.org/project/gnushogi/).
+
+

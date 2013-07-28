@@ -1,0 +1,59 @@
+Version 0.1.6
+-------------
+2012-05-03  John Cheetham  developer@johncheetham.com 
+
+    * Fix bug in processing of position SFEN line
+
+
+Version 0.1.5
+-------------
+2012-04-27  John Cheetham  developer@johncheetham.com 
+
+    * Fix buffer overflow bug
+
+
+Version 0.1.4
+-------------
+2011-03-23  John Cheetham  developer@johncheetham.com 
+
+    * Change to work with more USI time controls.
+
+    * Support for loading/saving games in PSN format       
+
+    * Add log file.
+
+    * pass back nps to engine in info message 
+
+
+Version 0.1.3
+-------------
+2010-09-19  John Cheetham  developer@johncheetham.com 
+
+    * Pass back info messages to the GUI for score, nodes, pv, time.
+
+    * Invoke the program via the gse.sh shell script. This makes the
+      working directory the same as the program directory and fixes
+      a problem with locating the opening book in gShogi 0.2.1.
+
+
+Version 0.1.2
+-------------
+2010-09-15  John Cheetham  developer@johncheetham.com 
+
+    * Fix bug in time remaining calculation.
+ 
+
+Version 0.1.1
+-------------
+2010-09-15  John Cheetham  developer@johncheetham.com 
+
+    * If resigning then pass back 'resign' to the GUI. This prevents
+      illegal move messages in shogidokoro after gse is checkmated.
+ 
+
+Inital Version 0.1
+------------------
+2010-09-13  John Cheetham  developer@johncheetham.com 
+
+    * Release the initial version (0.1)
+
